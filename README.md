@@ -1,154 +1,80 @@
-# Beyond-All-Reason
+# BAR without brood land swarmers and brood turrets
 
-![Discord](https://img.shields.io/discord/225695362004811776)
+Fork of [Beyond All Reason](https://github.com/beyond-all-reason/Beyond-All-Reason) where these units no longer appear:
 
-Open source RTS game built on top of the Recoil RTS Engine
+- `raptor_land_swarmer_brood` (T2, T3 and T4)
+- `raptor_turret_brood` (T2, T3 and T4 v1/v2)
 
-## Where to download
+Brood bombers, brood artillery and healers still spawn. Their shots no longer hatch a brood land swarmer.
 
-https://www.beyondallreason.info/download
+There is nothing to compile. The game is Lua, loaded by the official Beyond All Reason launcher.
 
-## How to play
+## Français
 
-https://www.beyondallreason.info/guides
+### Installer le lanceur
 
-## Development Quick Start
+Installe Beyond All Reason depuis [beyondallreason.info/download](https://www.beyondallreason.info/download), puis ouvre le lanceur. Clique sur **Open install directory**.
 
-Beyond All Reason (BAR), consists of 2 primary components, the lobby (Chobby - https://github.com/beyond-all-reason/BYAR-Chobby) and the game code itself (this repository).
+- Linux : `~/.local/state/Beyond All Reason/`
+- Windows : `%LOCALAPPDATA%\Programs\Beyond-All-Reason\data`
 
-The game runs on top of the Recoil engine <https://github.com/beyond-all-reason/RecoilEngine>.
+### Activer le mode développement
 
-In order to develop the game (this repository) you first need a working install of the lobby/launcher. There are 2 ways to do this:
+Dans ce dossier d’installation, crée un fichier vide nommé `devmode.txt`.
 
-1. [Download the full BAR application](https://www.beyondallreason.info/download#How-To-Install) from the website and run it. This is probably what you will have done if you have previously installed and played the game.
+### Placer cette version
 
-2. OR if you want to develop the lobby client, follow [the guide in the Chobby README](https://github.com/beyond-all-reason/BYAR-Chobby#developing-the-lobby). First download a [release of Chobby](https://github.com/beyond-all-reason/BYAR-Chobby/releases) and then launch Chobby, this will automatically download and install the engine and other dependencies.
+Dans le sous-dossier `games` (crée-le s’il n’existe pas), clone ce dépôt sous le nom `BAR.sdd` :
 
-Once you have a working install of BAR you need a local development copy of the game code to work with. This code will live in the BAR install directory.
-
-1. To find the BAR install directory simply open the launcher (not full game) and click the "Open install directory" button. This is one of the 3 buttons (`Toggle log` and `Upload log` are the other 2). For Windows installs this might be your user's `AppData/Local/Programs/Beyond-All-Reason/data` directory, for Linux it might be your user's `.local/state/Beyond All Reason/` directory.
-
-2. In the BAR install directory create the empty file `devmode.txt`. E.g: `AppData/Local/Programs/Beyond-All-Reason/data/devmode.txt` or `.local/state/Beyond All Reason/devmode.txt`.
-
-3. In the BAR install directory (inside the `data` folder on Windows) in the `games` sub-directory (create `games` if it doesn't exist) clone the code for this repository into a directory with a name ending in `.sdd`. For example:
-
-```
-git clone --recurse-submodules https://github.com/beyond-all-reason/Beyond-All-Reason.git BAR.sdd
+```bash
+mkdir -p "$HOME/.local/state/Beyond All Reason/games"
+git clone --recurse-submodules https://github.com/ECprx77/BAR_without-raptor-turrets-and-lswarmer.git "$HOME/.local/state/Beyond All Reason/games/BAR.sdd"
 ```
 
-Ensure that you have the correct path by looking for the file `Beyond-All-Reason/data/games/BAR.sdd/modinfo.lua` on Windows, or `.local/state/Beyond All Reason/games/BAR.sdd/modinfo.lua` on Linux.
+Sous Windows, utilise le dossier `games` qui se trouve dans le répertoire ouvert par le lanceur, et nomme aussi le clone `BAR.sdd`.
 
-4. Now you have the game code launch the full game from the launcher as normal. Then go to `Settings > Developer > Singleplayer` and select `Beyond All Reason Dev`.
+Le fichier `games/BAR.sdd/modinfo.lua` doit exister.
 
-5. Now you can launch a match normally through the game UI. This match will use the development copy of the Lua code in the `BAR.sdd` directory you cloned in step 3.
+### Lancer une partie
 
-6. If developing Chobby also clone the code into the `games` directory. Follow the guide in the [Chobby README](https://github.com/beyond-all-reason/BYAR-Chobby#developing-the-lobby).
+1. Démarre le jeu depuis le lanceur.
+2. Va dans **Settings > Developer > Singleplayer**.
+3. Choisis **Beyond All Reason Dev**.
+4. Lance une partie normalement. Elle utilise les fichiers de `BAR.sdd`.
 
-7. (Optional, Advanced) If you want to run automated integration tests, see the [testing documentation](tools/headless_testing/README.md)
+Pour prendre en compte un `git pull` ultérieur, relance la partie.
 
-More on the `.sdd` directory to run raw LUA and the structure expected by Spring Engine is [documented here](https://springrts.com/wiki/Gamedev:Structure).
+## English
 
----
+### Install the launcher
 
-## Automated Testing
+Install Beyond All Reason from [beyondallreason.info/download](https://www.beyondallreason.info/download), then open the launcher. Click **Open install directory**.
 
-### Prereqs
+- Linux: `~/.local/state/Beyond All Reason/`
+- Windows: `%LOCALAPPDATA%\Programs\Beyond-All-Reason\data`
 
-**Lua 5.1**
+### Turn on development mode
 
-_debian/linux_
+In that install directory, create an empty file named `devmode.txt`.
 
-```zsh
-sudo apt install -y lua5.1
+### Install this version
+
+Inside the `games` folder (create it if needed), clone this repository as `BAR.sdd`:
+
+```bash
+mkdir -p "$HOME/.local/state/Beyond All Reason/games"
+git clone --recurse-submodules https://github.com/ECprx77/BAR_without-raptor-turrets-and-lswarmer.git "$HOME/.local/state/Beyond All Reason/games/BAR.sdd"
 ```
 
-_windows_ (MSYS2 UCRT64)
+On Windows, clone into the `games` folder of the directory opened by the launcher, and name the folder `BAR.sdd` as well.
 
-```zsh
-pacman -S --needed mingw-w64-ucrt-x86_64-lua51
-```
+`games/BAR.sdd/modinfo.lua` must exist.
 
-_macOS_
+### Start a match
 
-```zsh
-brew install lua@5.1
-```
+1. Start the game from the launcher.
+2. Open **Settings > Developer > Singleplayer**.
+3. Select **Beyond All Reason Dev**.
+4. Start a match as usual. It loads the files in `BAR.sdd`.
 
-**Lux Package Manager**
-Follow the [Lux Getting Started Guide](https://lux.lumen-labs.org/tutorial/getting-started/).
-
-Or follow the Cargo instructions to manually build [on the Lux Github](https://github.com/lumen-oss/lux?tab=readme-ov-file#wrench-building-from-source)
-
-### Install Project Packages
-
-From the repo root (where `lux.toml` lives):
-
-```zsh
-lux --max-jobs=2 update
-```
-Note: in my testing `--max-jobs` was super specific to my machine and anything above that number would sometimes cause deadlocks.
-
-
-### Running Tests
-
-Run the full suite (via [Busted](https://lunarmodules.github.io/busted/)):
-
-```zsh
-# preferred for predictable CLI behavior
-busted
-```
-
-Filter by tag:
-
-```zsh
-busted -t focus
-```
-
-Optionally, run through Lux’s wrapper:
-
-```zsh
-lx test
-# run the emmylua type check
-lx check
-# or to drop into a shell so you can run `busted` manually
-lx shell --test
-busted
-8 successes / 0 failures / 0 errors / 0 pending : 0.246881 seconds
-```
-
-See Lux [Guides](https://lux.lumen-labs.org/guides/formatting-linting) for more information.
-
-Inspect objects inline while debugging:
-
-```lua
-print(VFS.Include("inspect.lua")(someObject))
-```
-
-### VS Code Test Switcher (optional)
-
-This handy plugin lets you switch between the test and the code-being-tested just by tapping `Cmd+Shift+Y`.
-
-VSCode Plugin: https://marketplace.visualstudio.com/items?itemName=bmalehorn.test-switcher
-
-Then open **User Settings (JSON)** and add:
-
-```json
-"test-switcher.rules": [
-    {
-        "pattern": "spec/(.*)_spec\\.lua",
-        "replacement": "$1.lua"
-    },
-    {
-        "pattern": "spec/builder_specs/(.*)_spec\\.lua",
-        "replacement": "spec/builders/$1.lua"
-    },
-    {
-        "pattern": "spec/builders/(.*)\\.lua",
-        "replacement": "spec/builder_specs/$1_spec.lua"
-    },
-    {
-        "pattern": "(luarules|common|luaui|gamedata)/(.*)\\.lua",
-        "replacement": "spec/$1/$2_spec.lua"
-    }
-],
-```
+After a later `git pull`, start a new match to pick up the changes.

@@ -32,7 +32,7 @@ raptorTurrets.raptor_turret_acid_t2_v1 =
 raptorTurrets.raptor_turret_emp_t2_v1 =
 	{ minQueenAnger = 15, spawnedPerWave = 0.25, maxExisting = 10, maxQueenAnger = 1000 }
 raptorTurrets.raptor_turret_brood_t2_v1 =
-	{ minQueenAnger = 15, spawnedPerWave = 0.25, maxExisting = 10, maxQueenAnger = 1000 }
+	{ minQueenAnger = 15, spawnedPerWave = 0, maxExisting = 0, maxQueenAnger = 1000 }
 raptorTurrets.raptor_turret_basic_t3_v1 =
 	{ minQueenAnger = 30, spawnedPerWave = 0.5, maxExisting = 6, maxQueenAnger = 1000 }
 raptorTurrets.raptor_turret_acid_t3_v1 =
@@ -40,7 +40,7 @@ raptorTurrets.raptor_turret_acid_t3_v1 =
 raptorTurrets.raptor_turret_emp_t3_v1 =
 	{ minQueenAnger = 45, spawnedPerWave = 0.25, maxExisting = 3, maxQueenAnger = 1000 }
 raptorTurrets.raptor_turret_brood_t3_v1 =
-	{ minQueenAnger = 45, spawnedPerWave = 0.25, maxExisting = 3, maxQueenAnger = 1000 }
+	{ minQueenAnger = 45, spawnedPerWave = 0, maxExisting = 0, maxQueenAnger = 1000 }
 
 if not Spring.GetModOptions().unit_restrictions_nonukes then
 	raptorTurrets.raptor_turret_antinuke_t2_v1 =
@@ -72,9 +72,9 @@ if not Spring.GetModOptions().unit_restrictions_nolrpc then
 	raptorTurrets.raptor_turret_acid_t4_v2 =
 		{ minQueenAnger = 75, spawnedPerWave = 0.25, maxExisting = 1, maxQueenAnger = 1000 }
 	raptorTurrets.raptor_turret_brood_t4_v1 =
-		{ minQueenAnger = 75, spawnedPerWave = 0.25, maxExisting = 1, maxQueenAnger = 1000 }
+		{ minQueenAnger = 75, spawnedPerWave = 0, maxExisting = 0, maxQueenAnger = 1000 }
 	raptorTurrets.raptor_turret_brood_t4_v2 =
-		{ minQueenAnger = 75, spawnedPerWave = 0.25, maxExisting = 1, maxQueenAnger = 1000 }
+		{ minQueenAnger = 75, spawnedPerWave = 0, maxExisting = 0, maxQueenAnger = 1000 }
 end
 
 local raptorEggs =
@@ -689,58 +689,30 @@ local raptorMinions = { -- Units spawning other units
 		"raptor_land_assault_spectre_t2_v1",
 		"raptor_land_assault_spectre_t4_v1",
 	},
-	raptor_land_swarmer_brood_t4_v1 = {
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
-	},
-	raptor_land_swarmer_brood_t3_v1 = {
-		"raptor_land_swarmer_brood_t2_v1",
-	},
-	raptor_allterrain_arty_brood_t4_v1 = {
-		"raptor_land_swarmer_brood_t2_v1",
-	},
 	raptor_queen_veryeasy = {
-		"raptor_land_swarmer_brood_t4_v1",
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
 		"raptor_land_swarmer_heal_t1_v1",
 	},
 	raptor_queen_easy = {
-		"raptor_land_swarmer_brood_t4_v1",
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
 		"raptor_allterrain_arty_brood_t2_v1",
 		"raptor_land_swarmer_heal_t1_v1",
 		"raptor_land_swarmer_heal_t2_v1",
 	},
 	raptor_queen_normal = {
-		"raptor_land_swarmer_brood_t4_v1",
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
 		"raptor_allterrain_arty_brood_t2_v1",
 		"raptor_land_swarmer_heal_t2_v1",
 		"raptor_land_swarmer_heal_t3_v1",
 	},
 	raptor_queen_hard = {
-		"raptor_land_swarmer_brood_t4_v1",
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
 		"raptor_allterrain_arty_brood_t2_v1",
 		"raptor_land_swarmer_heal_t2_v1",
 		"raptor_land_swarmer_heal_t3_v1",
 	},
 	raptor_queen_veryhard = {
-		"raptor_land_swarmer_brood_t4_v1",
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
 		"raptor_allterrain_arty_brood_t2_v1",
 		"raptor_land_swarmer_heal_t3_v1",
 		"raptor_land_swarmer_heal_t4_v1",
 	},
 	raptor_queen_epic = {
-		"raptor_land_swarmer_brood_t4_v1",
-		"raptor_land_swarmer_brood_t3_v1",
-		"raptor_land_swarmer_brood_t2_v1",
 		"raptor_allterrain_arty_brood_t2_v1",
 		"raptor_land_swarmer_heal_t3_v1",
 		"raptor_land_swarmer_heal_t4_v1",
@@ -2380,122 +2352,7 @@ addNewSquad({
 	},
 })
 
---Brood------------------------------------------------------------------------------------------------------
-
-addNewSquad({
-	type = "special",
-	minAnger = 20,
-	units = {
-		{ count = 2, unit = "raptor_land_swarmer_brood_t2_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 40,
-	units = {
-		{ count = 4, unit = "raptor_land_swarmer_brood_t2_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 60,
-	units = {
-		{ count = 8, unit = "raptor_land_swarmer_brood_t2_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 80,
-	units = {
-		{ count = 16, unit = "raptor_land_swarmer_brood_t2_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 100,
-	maxAnger = 1000,
-	units = {
-		{ count = 32, unit = "raptor_land_swarmer_brood_t2_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 20,
-	units = {
-		{ count = 1, unit = "raptor_land_swarmer_brood_t3_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 40,
-	units = {
-		{ count = 2, unit = "raptor_land_swarmer_brood_t3_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 60,
-	units = {
-		{ count = 4, unit = "raptor_land_swarmer_brood_t3_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 80,
-	units = {
-		{ count = 8, unit = "raptor_land_swarmer_brood_t3_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 100,
-	maxAnger = 1000,
-	units = {
-		{ count = 16, unit = "raptor_land_swarmer_brood_t3_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 40,
-	units = {
-		{ count = 1, unit = "raptor_land_swarmer_brood_t4_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 60,
-	units = {
-		{ count = 2, unit = "raptor_land_swarmer_brood_t4_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 80,
-	units = {
-		{ count = 4, unit = "raptor_land_swarmer_brood_t4_v1" },
-	},
-})
-
-addNewSquad({
-	type = "special",
-	minAnger = 100,
-	maxAnger = 1000,
-	units = {
-		{ count = 8, unit = "raptor_land_swarmer_brood_t4_v1" },
-	},
-})
+--Brood land swarmers disabled: these squads are not registered.
 
 --Matriarchs------------------------------------------------------------------------------------------------------
 

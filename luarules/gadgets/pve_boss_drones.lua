@@ -27,39 +27,6 @@ local raptorQueenCount = Spring.GetModOptions().raptor_queen_count
 local positionCheckLibrary = require("luarules/Utilities/damgam_lib/position_checks")
 
 local unitListNames = {
-	-- Brood Raptors
-	raptor_land_swarmer_brood_t4_v1 = {
-		[1] = {
-			name = "raptor_land_swarmer_brood_t3_v1",
-			type = "ground",
-			spawnRadius = 100,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 1,
-			spawnTimer = 120,
-		},
-		[2] = {
-			name = "raptor_land_swarmer_brood_t2_v1",
-			type = "ground",
-			spawnRadius = 100,
-			fightRadius = 500,
-			spawnedPerWave = 4,
-			maxAllowed = 4,
-			spawnTimer = 60,
-		},
-	},
-	raptor_land_swarmer_brood_t3_v1 = {
-		[1] = {
-			name = "raptor_land_swarmer_brood_t2_v1",
-			type = "ground",
-			spawnRadius = 100,
-			fightRadius = 500,
-			spawnedPerWave = 2,
-			maxAllowed = 2,
-			spawnTimer = 120,
-		},
-	},
-
 	-- Miniqueens
 	raptor_matriarch_basic = {
 		[1] = {
@@ -275,15 +242,6 @@ local unitListNames = {
 			spawnTimer = 10 * raptorQueenCount,
 		},
 		[3] = {
-			name = "raptor_land_swarmer_brood_t4_v1",
-			type = "ground",
-			spawnRadius = 500,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 1,
-			spawnTimer = 10 * raptorQueenCount,
-		},
-		[4] = {
 			name = "raptor_land_swarmer_heal_t4_v1",
 			type = "ground",
 			spawnRadius = 500,
@@ -313,15 +271,6 @@ local unitListNames = {
 			spawnTimer = 10 * raptorQueenCount,
 		},
 		[3] = {
-			name = "raptor_land_swarmer_brood_t4_v1",
-			type = "ground",
-			spawnRadius = 500,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 2,
-			spawnTimer = 10 * raptorQueenCount,
-		},
-		[4] = {
 			name = "raptor_land_swarmer_heal_t4_v1",
 			type = "ground",
 			spawnRadius = 500,
@@ -351,15 +300,6 @@ local unitListNames = {
 			spawnTimer = 10 * raptorQueenCount,
 		},
 		[3] = {
-			name = "raptor_land_swarmer_brood_t4_v1",
-			type = "ground",
-			spawnRadius = 500,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 3,
-			spawnTimer = 10 * raptorQueenCount,
-		},
-		[4] = {
 			name = "raptor_land_swarmer_heal_t4_v1",
 			type = "ground",
 			spawnRadius = 500,
@@ -398,15 +338,6 @@ local unitListNames = {
 			spawnTimer = 10 * raptorQueenCount,
 		},
 		[4] = {
-			name = "raptor_land_swarmer_brood_t4_v1",
-			type = "ground",
-			spawnRadius = 500,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 4,
-			spawnTimer = 10 * raptorQueenCount,
-		},
-		[5] = {
 			name = "raptor_land_swarmer_heal_t4_v1",
 			type = "ground",
 			spawnRadius = 500,
@@ -445,15 +376,6 @@ local unitListNames = {
 			spawnTimer = 10 * raptorQueenCount,
 		},
 		[4] = {
-			name = "raptor_land_swarmer_brood_t4_v1",
-			type = "ground",
-			spawnRadius = 500,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 5,
-			spawnTimer = 10 * raptorQueenCount,
-		},
-		[5] = {
 			name = "raptor_land_swarmer_heal_t4_v1",
 			type = "ground",
 			spawnRadius = 500,
@@ -492,15 +414,6 @@ local unitListNames = {
 			spawnTimer = 10 * raptorQueenCount,
 		},
 		[4] = {
-			name = "raptor_land_swarmer_brood_t4_v1",
-			type = "ground",
-			spawnRadius = 500,
-			fightRadius = 500,
-			spawnedPerWave = 1,
-			maxAllowed = 6,
-			spawnTimer = 10 * raptorQueenCount,
-		},
-		[5] = {
 			name = "raptor_land_swarmer_heal_t4_v1",
 			type = "ground",
 			spawnRadius = 500,

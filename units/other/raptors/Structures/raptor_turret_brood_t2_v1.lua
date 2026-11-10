@@ -110,8 +110,6 @@ return {
 					shields = 200,
 				},
 				customparams = {
-					spawns_name = "raptor_land_swarmer_brood_t2_v1",
-					spawns_surface = "LAND SEA", -- Available: "LAND SEA"
 				},
 			},
 		},
